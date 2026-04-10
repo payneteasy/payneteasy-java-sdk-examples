@@ -19,7 +19,7 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <paynet.version>3.36.141-46-reader</paynet.version>
+        <payneteasy-sdk.version>3.36.141-46-reader</payneteasy-sdk.version>
     </properties>
 
     <repositories>
@@ -39,13 +39,13 @@
         <dependency>
             <groupId>com.payneteasy.paynet</groupId>
             <artifactId>paynet-remote-api-client</artifactId>
-            <version>${paynet.version}</version>
+            <version>${payneteasy-sdk.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.payneteasy.paynet</groupId>
             <artifactId>paynet-remote-api</artifactId>
-            <version>${paynet.version}</version>
+            <version>${payneteasy-sdk.version}</version>
         </dependency>
 
         <dependency>

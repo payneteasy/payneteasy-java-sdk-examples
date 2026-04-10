@@ -53,13 +53,13 @@ Add the Payneteasy repository and dependencies to your `pom.xml`:
     <dependency>
         <groupId>com.payneteasy.paynet</groupId>
         <artifactId>paynet-remote-api-client</artifactId>
-        <version>${paynet.version}</version>
+        <version>3.36.141-46-reader</version>
     </dependency>
 
     <dependency>
         <groupId>com.payneteasy.paynet</groupId>
         <artifactId>paynet-remote-api</artifactId>
-        <version>${paynet.version}</version>
+        <version>3.36.141-46-reader</version>
     </dependency>
 
     <dependency>
