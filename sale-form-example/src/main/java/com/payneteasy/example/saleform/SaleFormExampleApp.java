@@ -43,24 +43,7 @@ public class SaleFormExampleApp implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        String invoice = UUID.randomUUID().toString();
-
-        SaleFormRequest saleFormRequest = new SaleFormRequest();
-        saleFormRequest.setClientOrderId(invoice);
-
-        saleFormRequest.setOrderDescription ( "Description for " + invoice );
-
-        saleFormRequest.setAmount    ( amount             );
-        saleFormRequest.setCurrency  ( currency           );
-
-        saleFormRequest.setEmail     ( "test@mail.com"    );
-        saleFormRequest.setIpAddress ( "1.2.3.4"          );
-
-        saleFormRequest.setCountry  ( "FR"                );
-        saleFormRequest.setAddress1 ( "10 Rue de la Paix" );
-        saleFormRequest.setZipCode  ( "75002"             );
-        saleFormRequest.setCity     ( "Paris"             );
-
+        // initialize IPaynetService
         ControlClientHttpService httpClient = new ControlClientHttpService(
                 new HttpClientImpl()
                 , HttpRequestParameters
@@ -81,6 +64,25 @@ public class SaleFormExampleApp implements Callable<Integer> {
                 .controlKey ( controlKey )
                 .httpClient ( httpClient )
                 .build();
+
+        // prepare and send sale form request
+        String invoice = UUID.randomUUID().toString();
+
+        SaleFormRequest saleFormRequest = new SaleFormRequest();
+        saleFormRequest.setClientOrderId(invoice);
+
+        saleFormRequest.setOrderDescription ( "Description for " + invoice );
+
+        saleFormRequest.setAmount    ( amount             );
+        saleFormRequest.setCurrency  ( currency           );
+
+        saleFormRequest.setEmail     ( "test@mail.com"    );
+        saleFormRequest.setIpAddress ( "1.2.3.4"          );
+
+        saleFormRequest.setCountry  ( "FR"                );
+        saleFormRequest.setAddress1 ( "10 Rue de la Paix" );
+        saleFormRequest.setZipCode  ( "75002"             );
+        saleFormRequest.setCity     ( "Paris"             );
 
         LOG.info("Sending sale form request to {} ...", baseApiUrl);
         AsyncCheckoutFormRedirect redirectResult = paynet.startSaleForm(endpointId, saleFormRequest);
