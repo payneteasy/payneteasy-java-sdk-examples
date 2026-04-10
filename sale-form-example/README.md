@@ -39,8 +39,8 @@ Add the Payneteasy repository and dependencies to your `pom.xml`:
 ```xml
 <repositories>
     <repository>
-        <id>public-payneteasy-repo</id>
-        <url>https://maven.pne.io</url>
+        <id>payneteasy-sdk-repo</id>
+        <url>https://paynet-qa.clubber.me/reader/maven</url>
     </repository>
 
     <repository>

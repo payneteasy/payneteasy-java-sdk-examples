@@ -48,13 +48,13 @@ public class SaleFormExampleApp implements Callable<Integer> {
         SaleFormRequest saleFormRequest = new SaleFormRequest();
         saleFormRequest.setClientOrderId(invoice);
 
-        saleFormRequest.setAmount           ( amount   );
-        saleFormRequest.setCurrency         ( currency );
-
         saleFormRequest.setOrderDescription ( "Description for " + invoice );
 
-        saleFormRequest.setEmail     ( "test@mail.com" );
-        saleFormRequest.setIpAddress ( "1.2.3.4"       );
+        saleFormRequest.setAmount    ( amount             );
+        saleFormRequest.setCurrency  ( currency           );
+
+        saleFormRequest.setEmail     ( "test@mail.com"    );
+        saleFormRequest.setIpAddress ( "1.2.3.4"          );
 
         saleFormRequest.setCountry  ( "FR"                );
         saleFormRequest.setAddress1 ( "10 Rue de la Paix" );
